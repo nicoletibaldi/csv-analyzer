@@ -45,10 +45,7 @@ module.exports = {
         }
       }
     }
-    return {
-      wordFreq,
-      typeObj,
-    };
+    return [typeObj, wordFreq];
   },
 
   orderColumnTypes(columnTypes) {
@@ -84,12 +81,12 @@ module.exports = {
     return columnIsMultipleChoice;
   },
 
-  assignMultipleChoiceType(multipleChoice, columnName, typesObj, mostFreq) {
+  assignType(multipleChoice, wordFreq, mostFreq) {
     let type;
     if (multipleChoice) {
       type = {
         type: constants.MULTIPLE_CHOICE,
-        choices: Object.keys(typesObj.wordFreq),
+        choices: Object.keys(wordFreq),
       };
     } else {
       type = { type: mostFreq };
