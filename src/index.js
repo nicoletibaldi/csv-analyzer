@@ -44,10 +44,3 @@ prompt.get(['file'], (err, result) => {
   console.log(analyzeCsvData(result.file));
   /* eslint-disable no-console */
 });
-
-
-// We have some contact records in a CSV (attached). We want to convert this
-// CSV into a database schema. Write a Node program that will read the full list
-// of contacts and predict whether each column is one of the following 3 types:
-// Date/Time, Text, or Multiple Choice. Provide the available options for any Multiple
-// Choice columns. This program should be fully tested. Use ES6 conventions when applicable.
