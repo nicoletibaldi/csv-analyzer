@@ -4,7 +4,7 @@ This project was created to solve the following problem:
 We have some contact records in a CSV (attached). We want to convert this CSV into a database schema. Write a Node program that will read the full list of contacts and predict whether each column is one of the following 3 types: Date/Time, Text, or Multiple Choice. Provide the available options for any Multiple Choice columns. This program should be fully tested. Use ES6 conventions when applicable.
 ```
 
-The app returns an object which contains keys that represent the column names. Each key has a nested object, which has a key of `type`, and lists the column's type (date/time, text, or multiple choice). If `type` is multiple choice, the object includes another key, `choices`, which lists the choices for the multiple choice column, in array format.
+This node program returns an object which contains keys that represent the column names. Each key has a nested object, which has a key of `type`, and lists the column's type (date/time, text, or multiple choice). If `type` is multiple choice, the object includes another key, `choices`, which lists the choices for the multiple choice column, in array format.
 
 ## Setup:
 Run `npm install` from within the project folder.
