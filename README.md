@@ -24,7 +24,7 @@ Lints both the project and test files using Airbnb linting rules.
 ## Other Considerations:
 I wanted to return this in a timely fashion, but I can think of a lot of possible improvements that would make this really cool.
 
-First, I'd like to create a function that generates a SQL statement along with the object that shows the types. This would have to determine the type (for most of these, `varchar`), if the column is nullable (I already checked for the presence of null in the types for this reason), and create constraints for the multiple choice columns that will only allow `varchar` values that are part of the `choices` array, like so:
+First, I'd like to create a function that generates a SQL statement along with the object that shows the types. This would have to determine the data type in the context of SQL (for most of these, `varchar`), if the column is nullable (I already checked for the presence of null in the types for this reason), and create constraints for the multiple choice columns that will only allow `varchar` values that are part of the `choices` array, like so:
 Example column: Gender
 Choices: Male, Female, Unknown
 `CONSTRAINT check_value CHECK (value IN ('Male', 'Female', 'Unknown'))`
