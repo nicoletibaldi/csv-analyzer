@@ -64,21 +64,18 @@ module.exports = {
     // we can conclude if a column is multiple choice by determining the
     // following: the minimum percentage frequency of any multiple choice
     // value is the number of unique values divided by the column's length
-    // for example, if a multiple choice column has three options, the min
-    // percentage is 33.3(repeating). at least one of the values must appear
-    // 33.3% of the time for the column to be considered multiple choice
     const keys = Object.keys(wordFreq);
     const numUniqueValues = keys.length;
     const minPercentage = numUniqueValues / columnLength;
-    let columnIsMultipleChoice = false;
     for (let i = 0; i < numUniqueValues; i++) {
       const currentValue = keys[i];
       const wordFreqPercentage = wordFreq[currentValue] / columnLength;
       if (wordFreqPercentage >= minPercentage) {
-        columnIsMultipleChoice = true;
+        // if ANY of the values meet this condition, the column is MC
+        return true;
       }
     }
-    return columnIsMultipleChoice;
+    return false;
   },
 
   assignType(multipleChoice, wordFreq, mostFreq) {
