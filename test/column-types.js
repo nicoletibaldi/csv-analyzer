@@ -1,5 +1,5 @@
 const assert = require('assert');
-const columnTypes = require('../column-types.js');
+const columnTypes = require('../src/column-types');
 // orderColumnTypes, getMostFrequentType, isMultipleChoice, assignMultipleChoiceType
 
 const idValues = ['ABC', '', 'GHI', 'JKL', ''];

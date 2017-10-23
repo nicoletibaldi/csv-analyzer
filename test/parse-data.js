@@ -1,5 +1,5 @@
 const assert = require('assert');
-const parseData = require('../parse-data.js');
+const parseData = require('../src/parse-data');
 
 // ugh. using tabs inside this string causes them to appear in the matrix...
 // sorry, fellow neat-freaks.
